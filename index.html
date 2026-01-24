@@ -163,6 +163,17 @@ footer{
 </head>
 
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+<script>
+    // This activates the 3D hover on your cards
+    VanillaTilt.init(document.querySelectorAll(".service-card"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.3
+    });
+</script>
 
 <header>
   <h1>Ankzo Digital Services</h1>
@@ -268,6 +279,7 @@ quality work make Ankzo Digital Services a reliable choice.
 
 </body>
 </html>
+
 
 
 
