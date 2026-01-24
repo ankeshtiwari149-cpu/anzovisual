@@ -1,62 +1,39 @@
-/* General Background Requirement: Light Blue to White */
+/* Body Background: Light Blue to White */
 body {
-    font-family: 'Inter', sans-serif;
     background: linear-gradient(180deg, #E0F2FE 0%, #FFFFFF 100%);
     margin: 0;
-    color: #333;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Hero Section: Blue to Purple Gradient */
+/* Hero: Blue to Purple Gradient */
 .hero {
     background: linear-gradient(135deg, #2563EB, #9333EA);
-    padding: 100px 20px;
-    text-align: center;
     color: white;
 }
 
-/* Services Section: Cyan to Blue Gradient */
+/* Service Cards: Cyan to Blue with 3D Hover */
 .service-card {
     background: linear-gradient(135deg, #06B6D4, #3B82F6);
     border-radius: 15px;
-    padding: 30px;
-    color: white;
-    transition: transform 0.3s ease; /* For 3D Hover Card */
+    padding: 20px;
+    transition: transform 0.3s ease;
 }
 
-/* Buttons: Purple to Pink Gradient & 3D Press Effect */
+/* Buttons: Purple to Pink with 3D Press */
 .cta-button {
     background: linear-gradient(90deg, #A855F7, #EC4899);
     border: none;
-    padding: 15px 30px;
-    color: white;
-    font-weight: bold;
     border-radius: 50px;
-    cursor: pointer;
     box-shadow: 0 4px #9D174D;
-    transition: all 0.1s ease;
+    cursor: pointer;
 }
 
 .cta-button:active {
-    transform: translateY(4px); /* 3D Press Effect */
+    transform: translateY(4px);
     box-shadow: 0 0 #9D174D;
 }
 
-/* Footer: Dark Navy to Black Gradient */
+/* Footer: Dark Navy to Black */
 footer {
     background: linear-gradient(180deg, #0F172A, #000000);
-    padding: 50px 20px;
-    color: white;
-    text-align: center;
-}
-
-/* Portfolio: 3D Flip Placeholder */
-.portfolio-item {
-    perspective: 1000px;
-}
-.portfolio-inner {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-.portfolio-item:hover .portfolio-inner {
-    transform: rotateY(180deg); /* 3D Flip */
 }
