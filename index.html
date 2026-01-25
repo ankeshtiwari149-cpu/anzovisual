@@ -1,43 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankzo Digital Services</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ankzo Digital Services | Creative Digital Solutions</title>
+
+<!-- SEO -->
+<meta name="description" content="Ankzo Digital Services offers Thumbnail Making, Branding, UI/UX Design, Web Development, Social Media Marketing and Content Creation.">
+<meta name="keywords" content="Digital Services, Web Development, Branding, UI UX, Social Media Marketing">
+<meta name="author" content="Ankesh Tiwari">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+body{
+  background:#f5f7ff;
+  color:#333;
+  scroll-behavior:smooth;
+}
+header{
+  background:linear-gradient(135deg,#6366f1,#0ea5e9);
+  color:#fff;
+  padding:70px 20px;
+  text-align:center;
+}
+header h1{
+  font-size:44px;
+}
+header p{
+  font-size:18px;
+  margin-top:10px;
+  opacity:0.9;
+}
+section{
+  padding:70px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+h2{
+  text-align:center;
+  font-size:32px;
+  color:#1e40af;
+  margin-bottom:40px;
+}
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+.card img{
+  width:75px;
+  margin-bottom:15px;
+}
+.card h3{
+  color:#2563eb;
+  margin-bottom:10px;
+}
+.about{
+  background:linear-gradient(135deg,#eef2ff,#ecfeff);
+  border-radius:25px;
+  padding:45px;
+  text-align:center;
+}
+.about p{
+  font-size:17px;
+  line-height:1.8;
+}
+.creative{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+.creative img{
+  width:100%;
+  border-radius:20px;
+}
+.contact{
+  background:linear-gradient(135deg,#020617,#1e293b);
+  border-radius:25px;
+  color:#fff;
+  padding:60px 20px;
+  text-align:center;
+}
+.contact h2{
+  color:#38bdf8;
+}
+.contact-info p{
+  font-size:18px;
+  margin:10px 0;
+}
+.contact-info a{
+  color:#38bdf8;
+  text-decoration:none;
+  font-weight:bold;
+}
+form{
+  max-width:500px;
+  margin:30px auto 0;
+}
+form input, form textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+}
+form button{
+  width:100%;
+  padding:12px;
+  background:#38bdf8;
+  border:none;
+  color:#000;
+  font-size:16px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+form button:hover{
+  background:#0ea5e9;
+}
+
+/* WhatsApp Button */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:50%;
+  font-size:26px;
+  text-decoration:none;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+footer{
+  background:#020617;
+  color:#94a3b8;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
-    <header class="hero" data-aos="fade-up">
-        <h1>Ankzo Digital Services</h1>
-        <p>Creative • Professional • Result-Driven Digital Solutions</p>
-    </header>
+<header>
+  <h1>Ankzo Digital Services</h1>
+  <p>Creative • Professional • Result-Driven Digital Solutions</p>
+</header>
 
-    <section class="services">
-        <h2 data-aos="fade">Our Services</h2>
-        <div class="service-grid">
-            <div class="card" data-aos="fade-in">
-                <img src="icon1.png" class="soft-zoom" alt="Icon">
-                <h3>UI / UX Design</h3>
-            </div>
-            <div class="card" data-aos="fade-in">
-                <img src="icon2.png" class="soft-zoom" alt="Icon">
-                <h3>Web Development</h3>
-            </div>
-        </div>
-    </section>
+<section>
+<h2>Our Services</h2>
+<div class="services">
 
-    <footer class="contact-section" data-aos="slide-up">
-        <div class="contact-card">
-            <h2>Contact Us</h2>
-            <button class="btn-gradient">Send Message</button>
-        </div>
-    </footer>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3176/3176363.png">
+<h3>Thumbnail Making</h3>
+<p>High-converting thumbnails to boost clicks and views.</p>
+</div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
+<h3>Branding</h3>
+<p>Professional brand identity that builds trust.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2703/2703928.png">
+<h3>UI / UX Design</h3>
+<p>User-friendly designs focused on experience.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png">
+<h3>Web Development</h3>
+<p>Modern, responsive & fast websites.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png">
+<h3>Social Media Marketing</h3>
+<p>Grow your brand reach & engagement.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1087/1087927.png">
+<h3>Content Creation</h3>
+<p>Creative content that converts audience.</p>
+</div>
+
+</div>
+</section>
+
+<section class="about">
+<h2>Why Choose Me?</h2>
+<p>
+I deliver creative, professional, and result-oriented digital services.
+Every project is handled with attention to detail, modern design trends,
+and client satisfaction. Clear communication, fast delivery, and
+quality work make Ankzo Digital Services a reliable choice.
+</p>
+</section>
+
+<section>
+<h2>Creative Work</h2>
+<div class="creative">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+</div>
+</section>
+
+<section class="contact">
+<h2>Contact Us</h2>
+
+<div class="contact-info">
+<p>Email: <a href="mailto:ankeshtiwari149@gmail.com">ankeshtiwari149@gmail.com</a></p>
+<p>Phone: <a href="tel:+918595048494">+91 8595048494</a></p>
+</div>
+
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/918595048494" target="_blank">💬</a>
+
+<footer>
+© 2026 Ankzo Digital Services | Designed by Ankesh
+</footer>
+
 </body>
 </html>
