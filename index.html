@@ -3,56 +3,1066 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Ankesh Tiwari | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b14;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 11, 20, 0.85);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00dbde;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ================= HERO ================= */
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding-top: 130px;
+        }
+
+        .hero {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hello {
+            font-size: 22px;
+            color: #00dbde;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.1;
+            margin-bottom: 30px;
+
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 30px;
+
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 219, 222, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+        }
+
+        /* ================= PROFILE IMAGE ================= */
+
+        .hero-image {
+            flex: 0 0 350px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-circle {
+            width: 330px;
+            height: 330px;
+
+            border-radius: 50%;
+            padding: 6px;
+
+            background: linear-gradient(135deg, #00dbde, #fc00ff);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            border-radius: 50%;
+
+            background: #111522;
+            border: 6px solid #080b14;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-card {
+            max-width: 950px;
+            margin: auto;
+
+            padding: 35px;
+
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 219, 222, 0.35);
+        }
+
+        .about-card p {
+            color: #c8ccd8;
+            font-size: 17px;
+            text-align: justify;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 30px 20px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #00dbde;
+
+            box-shadow: 0 10px 30px rgba(0, 219, 222, 0.12);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            padding: 25px;
+            margin-bottom: 20px;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border-left: 4px solid #00dbde;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateX(8px);
+        }
+
+        .education-card h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #b8bdca;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #fc00ff;
+
+            box-shadow: 0 15px 40px rgba(252, 0, 255, 0.12);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 210px;
+
+            background: #111522;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.4s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .placeholder {
+            color: #777f92;
+            font-size: 18px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .project-content p {
+            color: #b8bdca;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            color: #00dbde;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            color: #fc00ff;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-container {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 20px;
+
+            padding: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #c2c7d3;
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+
+            padding: 14px;
+
+            margin-bottom: 15px;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            border-radius: 10px;
+
+            color: white;
+
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #00dbde;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+
+            border: none;
+
+            cursor: pointer;
+
+            padding: 14px;
+
+            border-radius: 30px;
+
+            color: white;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+            color: #8f96a8;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                flex: auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 80px 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .profile-circle {
+                width: 250px;
+                height: 250px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>ANKESH TIWARI</h1>
-        <p>Computer Applications & Data Enthusiast</p>
-        <nav>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="https://linkedin.com/in/ankesh-tiwari-558814226" target="_blank">LinkedIn</a>
-        </nav>
-    </header>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                Ankesh Tiwari
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home">
+
+        <div class="hero">
+
+            <div class="hero-text">
+
+                <div class="hello">
+                    Hello, I'm
+                </div>
+
+                <h1>
+                    Ankesh Tiwari
+                </h1>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn">
+                        View My Projects
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="profile-circle">
+
+                    <!--
+                    YOUR PHOTO:
+                    Put your photo inside the images folder
+                    and name it ankesh.jpg
+
+                    Example:
+                    images/ankesh.jpg
+                    -->
+
+                    <img src="images/ankesh.jpg"
+                         alt="Ankesh Tiwari">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>I aim to build a career in Computer Applications and Digital Media by combining technical knowledge and creative problem-solving.</p>
+
+        <h2 class="section-title">
+            My Introduction
+        </h2>
+
+        <div class="about-card">
+
+            <p>
+                I am a motivated and creative Bachelor of Computer Applications
+                (BCA) student with a strong interest in technology, data, and
+                digital solutions. I enjoy working with data, transforming raw
+                information into meaningful insights, creating interactive
+                dashboards, and presenting information through clear and
+                effective visualizations. I also have an interest in website
+                designing and creating clean, user-friendly digital experiences.
+                Through my academic and personal projects, I have developed
+                practical knowledge of MS Excel, PowerPoint, MS Office, Python,
+                data cleaning, data visualization, dashboard creation, and
+                website designing. I believe in continuously learning and
+                improving my technical and creative skills through hands-on
+                practice and real-world projects. My goal is to build a
+                successful career in the technology and digital field where I
+                can apply my knowledge, creativity, analytical thinking, and
+                problem-solving abilities to contribute to meaningful projects
+                while continuously growing as a professional.
+            </p>
+
+        </div>
+
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Vrinda Store Annual Report (Excel)</h3>
-                <p>Comprehensive data cleaning and interactive dashboard analyzing sales trends and customer demographics.</p>
-            </div>
-            <img src="images/Screenshot(12).png" alt="Vrinda Store Report">
-            <div class="project-card">
-                <h3>Shiv Ecommerce Sales (Power BI)</h3>
-                <p>Interactive Power BI dashboard tracking vital KPIs and profit patterns by region and category.</p>
-            </div>
-            <div class="project-card">
-                <h3>Graphic Design Portfolio</h3>
-                <p>Showcasing creative works built with Adobe Photoshop, Canva, and CorelDRAW.</p>
-            </div>
-        </div>
-    </section>
+
+    <!-- ================= SKILLS ================= -->
 
     <section id="skills">
-        <h2>Core Skills</h2>
-        <ul>
-            <li>Data Analytics (Visualization, Cleaning)</li>
-            <li>Power BI & MS-Excel</li>
-            <li>Adobe Photoshop & InDesign</li>
-            <li>Video Editing</li>
-        </ul>
+
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3>Data Analyst</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📈</div>
+                <h3>Data Visualization</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🧹</div>
+                <h3>Data Cleaning</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>MS Office</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3>Dashboard Creation</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>Website Designing</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📑</div>
+                <h3>PowerPoint</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🐍</div>
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📗</div>
+                <h3>MS Excel</h3>
+            </div>
+
+        </div>
+
     </section>
 
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <h3>
+                    Bachelor of Computer Applications (BCA)
+                </h3>
+
+                <p>
+                    Institute of Information Technology & Management (IITM)
+                </p>
+
+                <p>
+                    Expected Graduation: 2027
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Diploma in Computer Application
+                </h3>
+
+                <p>
+                    VCSA
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Diploma in Desktop Publishing
+                </h3>
+
+                <p>
+                    VCSA
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My Projects
+        </h2>
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <!-- Project photo: images/vrinda-store.png -->
+
+                    <img src="images/vrinda-store.png"
+                         alt="Vrinda Store Annual Report"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;placeholder&quot;>Project Image 01</span>'">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Vrinda Store Annual Report
+                    </h3>
+
+                    <p>
+                        An Excel-based sales analysis project where I cleaned
+                        and organized data, analyzed sales and customer
+                        information, and created an interactive dashboard to
+                        understand business performance and sales trends.
+                    </p>
+
+                    <a href="https://lnkd.in/p/dwTFbTNj"
+                       class="project-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <!-- Project photo: images/shiv-ecommerce.png -->
+
+                    <img src="images/shiv-ecommerce.png"
+                         alt="Shiv Ecommerce Sales Dashboard"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;placeholder&quot;>Project Image 02</span>'">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Shiv Ecommerce Sales Dashboard
+                    </h3>
+
+                    <p>
+                        A Power BI dashboard created to analyze e-commerce
+                        sales data. It shows key business insights such as
+                        sales, profit, quantity, product categories, regions,
+                        and payment methods using interactive visualizations.
+                    </p>
+
+                    <a href="https://lnkd.in/p/dBgKEDUz"
+                       class="project-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <!-- Project photo: images/data-visualization.png -->
+
+                    <img src="images/data-visualization.png"
+                         alt="Data Visualization Project"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;placeholder&quot;>Project Image 03</span>'">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Data Visualization Project
+                    </h3>
+
+                    <p>
+                        A data visualization project focused on presenting
+                        data through clear charts and graphs. The project
+                        helps convert raw data into easy-to-understand visual
+                        insights for better analysis and decision-making.
+                    </p>
+
+                    <a href="https://lnkd.in/p/d2ftmEPU"
+                       class="project-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>
+                    Let's Connect
+                </h3>
+
+                <p>
+                    📧 <strong>Email:</strong><br>
+                    ankeshtiwari149@gmail.com
+                </p>
+
+                <p>
+                    📱 <strong>Contact:</strong><br>
+                    8595048494
+                </p>
+
+                <p>
+                    📍 <strong>Location:</strong><br>
+                    Delhi, India
+                </p>
+
+                <p>
+                    I am always open to new opportunities, projects,
+                    collaborations, and learning experiences.
+                </p>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <form id="contactForm">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your Email ID"
+                        required
+                    >
+
+                    <textarea
+                        id="message"
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
-        <p>Contact: ankeshtiwari149@gmail.com | Delhi, India</p>
+
+        <p>
+            © 2026 Ankesh Tiwari. All Rights Reserved.
+        </p>
+
     </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value;
+
+                const email =
+                    document.getElementById("email").value;
+
+                const message =
+                    document.getElementById("message").value;
+
+                const subject =
+                    "Portfolio Contact - " + name;
+
+                const body =
+                    "Name: " + name +
+                    "\nEmail: " + email +
+                    "\n\nMessage:\n" + message;
+
+                const mailto =
+                    "mailto:ankeshtiwari149@gmail.com" +
+                    "?subject=" +
+                    encodeURIComponent(subject) +
+                    "&body=" +
+                    encodeURIComponent(body);
+
+                window.location.href = mailto;
+
+            });
+
+    </script>
+
 </body>
 </html>
