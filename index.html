@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,119 +22,91 @@
             line-height: 1.6;
         }
 
-        /* ================= NAVBAR ================= */
-
+        /* NAVBAR */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-
-            background: rgba(8, 11, 20, 0.85);
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 25px;
-
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(8, 11, 20, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: bold;
-
             background: linear-gradient(90deg, #00dbde, #fc00ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
-            gap: 28px;
             list-style: none;
+            gap: 28px;
         }
 
-        .nav-links a {
+        nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-size: 15px;
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
+        nav ul li a:hover {
             color: #00dbde;
         }
 
-        /* ================= GENERAL ================= */
-
-        section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 100px 25px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 50px;
-
-            background: linear-gradient(90deg, #00dbde, #fc00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* ================= HERO ================= */
-
-        #home {
+        /* HERO */
+        .hero {
             min-height: 100vh;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
-            padding-top: 130px;
+            text-align: center;
+            padding: 120px 8% 60px;
         }
 
-        .hero {
-            width: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 60px;
+        .hero-content {
+            max-width: 900px;
         }
 
-        .hero-text {
-            flex: 1;
-        }
-
-        .hello {
-            font-size: 22px;
-            color: #00dbde;
-            margin-bottom: 10px;
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #00dbde;
+            box-shadow: 0 0 35px rgba(0, 219, 222, 0.35);
+            margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 80px);
-            line-height: 1.1;
-            margin-bottom: 30px;
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
 
+        .hero h1 span {
             background: linear-gradient(90deg, #00dbde, #fc00ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-buttons {
+        .hero p {
+            color: #b9c0d0;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
             display: flex;
+            justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
@@ -142,229 +115,143 @@
             display: inline-block;
             padding: 13px 25px;
             border-radius: 30px;
-
             text-decoration: none;
             color: white;
             font-weight: bold;
-
-            border: 1px solid rgba(255, 255, 255, 0.15);
-
-            background: linear-gradient(90deg, #00dbde, #fc00ff);
-
             transition: 0.3s;
+            border: 1px solid #00dbde;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            border: none;
         }
 
         .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0, 219, 222, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 219, 222, 0.2);
         }
 
-        .btn-outline {
-            background: transparent;
+        /* SECTIONS */
+        section {
+            padding: 90px 8%;
         }
 
-        /* ================= PROFILE IMAGE ================= */
-
-        .hero-image {
-            flex: 0 0 350px;
-
-            display: flex;
-            justify-content: center;
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
         }
 
-        .profile-circle {
-            width: 330px;
-            height: 330px;
-
-            border-radius: 50%;
-            padding: 6px;
-
-            background: linear-gradient(135deg, #00dbde, #fc00ff);
-
-            animation: floating 4s ease-in-out infinite;
+        .section-title span {
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .profile-circle img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-            border-radius: 50%;
-
-            background: #111522;
-            border: 6px solid #080b14;
-        }
-
-        @keyframes floating {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about-card {
+        /* ABOUT */
+        .about-box {
             max-width: 950px;
             margin: auto;
-
             padding: 35px;
-
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px;
-
-            backdrop-filter: blur(10px);
-
-            transition: 0.3s;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
         }
 
-        .about-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 219, 222, 0.35);
-        }
-
-        .about-card p {
-            color: #c8ccd8;
+        .about-box p {
+            color: #c6ccda;
             font-size: 17px;
             text-align: justify;
         }
 
-        /* ================= SKILLS ================= */
-
+        /* SKILLS */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 22px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .skill-card {
-            padding: 30px 20px;
-
+            padding: 25px;
             text-align: center;
-
-            background: rgba(255, 255, 255, 0.04);
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-
             border-radius: 18px;
-
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
             transition: 0.3s;
         }
 
         .skill-card:hover {
             transform: translateY(-8px);
-
             border-color: #00dbde;
-
-            box-shadow: 0 10px 30px rgba(0, 219, 222, 0.12);
-        }
-
-        .skill-icon {
-            font-size: 35px;
-            margin-bottom: 15px;
+            box-shadow: 0 15px 35px rgba(0,219,222,0.12);
         }
 
         .skill-card h3 {
             font-size: 18px;
         }
 
-        /* ================= EDUCATION ================= */
-
+        /* EDUCATION */
         .education-container {
-            max-width: 900px;
+            max-width: 950px;
             margin: auto;
+            display: grid;
+            gap: 22px;
         }
 
         .education-card {
-            padding: 25px;
-            margin-bottom: 20px;
-
-            background: rgba(255, 255, 255, 0.04);
-
-            border-left: 4px solid #00dbde;
-
-            border-radius: 12px;
-
+            padding: 28px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
             transition: 0.3s;
         }
 
         .education-card:hover {
-            transform: translateX(8px);
+            transform: translateY(-5px);
+            border-color: #fc00ff;
         }
 
         .education-card h3 {
-            font-size: 21px;
+            color: #00dbde;
             margin-bottom: 8px;
         }
 
         .education-card p {
-            color: #b8bdca;
+            color: #c6ccda;
         }
 
-        /* ================= PROJECTS ================= */
-
+        /* PROJECTS */
         .projects-grid {
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 25px;
+            max-width: 1150px;
+            margin: auto;
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.04);
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-
-            border-radius: 18px;
-
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
             overflow: hidden;
-
             transition: 0.3s;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
-
-            border-color: #fc00ff;
-
-            box-shadow: 0 15px 40px rgba(252, 0, 255, 0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-color: #00dbde;
         }
 
-        .project-image {
+        .project-card img {
             width: 100%;
             height: 210px;
-
-            background: #111522;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-
             object-fit: cover;
-
-            transition: 0.4s;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-
-        .placeholder {
-            color: #777f92;
-            font-size: 18px;
+            display: block;
         }
 
         .project-content {
@@ -372,84 +259,80 @@
         }
 
         .project-content h3 {
-            font-size: 21px;
             margin-bottom: 12px;
+            font-size: 21px;
         }
 
         .project-content p {
-            color: #b8bdca;
-            margin-bottom: 20px;
+            color: #bfc6d5;
             font-size: 15px;
+            margin-bottom: 20px;
         }
 
         .project-link {
             display: inline-block;
-
-            color: #00dbde;
-
+            padding: 10px 18px;
+            border-radius: 25px;
             text-decoration: none;
-
+            color: white;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            font-size: 14px;
             font-weight: bold;
-
             transition: 0.3s;
         }
 
         .project-link:hover {
-            color: #fc00ff;
+            transform: scale(1.05);
         }
 
-        /* ================= CONTACT ================= */
-
+        /* CONTACT */
         .contact-container {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 40px;
-
-            max-width: 1000px;
-
+            max-width: 900px;
             margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
         .contact-info,
         .contact-form {
-            background: rgba(255, 255, 255, 0.04);
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-
-            border-radius: 20px;
-
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
             padding: 30px;
+            border-radius: 20px;
         }
 
         .contact-info h3 {
-            font-size: 25px;
             margin-bottom: 20px;
+            color: #00dbde;
         }
 
         .contact-info p {
-            color: #c2c7d3;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            color: #c6ccda;
+        }
+
+        .contact-info a {
+            color: #00dbde;
+            text-decoration: none;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-
             padding: 14px;
-
             margin-bottom: 15px;
-
-            background: rgba(255, 255, 255, 0.05);
-
-            border: 1px solid rgba(255, 255, 255, 0.1);
-
             border-radius: 10px;
-
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
             color: white;
-
             outline: none;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: none;
         }
 
         .contact-form input:focus,
@@ -457,66 +340,28 @@
             border-color: #00dbde;
         }
 
-        .contact-form textarea {
-            height: 150px;
-
-            resize: vertical;
-        }
-
         .submit-btn {
             width: 100%;
-
+            padding: 13px;
             border: none;
-
-            cursor: pointer;
-
-            padding: 14px;
-
-            border-radius: 30px;
-
-            color: white;
-
-            font-weight: bold;
-
-            font-size: 16px;
-
+            border-radius: 25px;
             background: linear-gradient(90deg, #00dbde, #fc00ff);
-
-            transition: 0.3s;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        /* ================= FOOTER ================= */
-
+        /* FOOTER */
         footer {
             text-align: center;
-
-            padding: 30px 20px;
-
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-            color: #8f96a8;
+            padding: 30px 8%;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #8f97a8;
         }
 
-        /* ================= RESPONSIVE ================= */
-
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-image {
-                flex: auto;
-            }
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -533,28 +378,41 @@
 
         @media (max-width: 650px) {
 
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
+            nav {
+                padding: 15px 5%;
             }
 
-            .nav-links {
-                gap: 14px;
-                flex-wrap: wrap;
-                justify-content: center;
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
             }
 
             section {
-                padding: 80px 18px;
+                padding: 70px 5%;
             }
 
             .section-title {
-                font-size: 32px;
-            }
-
-            .profile-circle {
-                width: 250px;
-                height: 250px;
+                font-size: 30px;
             }
 
             .skills-grid,
@@ -562,8 +420,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                font-size: 50px;
+            .about-box {
+                padding: 25px;
+            }
+
+            .about-box p {
+                font-size: 15px;
+                text-align: left;
             }
         }
     </style>
@@ -571,77 +434,43 @@
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-
+    <!-- NAVIGATION -->
     <nav>
-        <div class="nav-container">
+        <div class="logo">ANKESH TIWARI</div>
 
-            <div class="logo">
-                Ankesh Tiwari
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
 
-    <!-- ================= HOME ================= -->
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-    <section id="home">
+        <div class="hero-content">
 
-        <div class="hero">
+            <!-- PERSONAL PHOTO -->
+            <img src="ankesh.jpg"
+                 alt="Ankesh Tiwari"
+                 class="profile-img">
 
-            <div class="hero-text">
+            <h1>
+                Hello, I'm <span>Ankesh Tiwari</span>
+            </h1>
 
-                <div class="hello">
-                    Hello, I'm
-                </div>
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects
+                </a>
 
-                <h1>
-                    Ankesh Tiwari
-                </h1>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="btn">
-                        View My Projects
-                    </a>
-
-                    <a href="#contact" class="btn btn-outline">
-                        Contact Me
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="hero-image">
-
-                <div class="profile-circle">
-
-                    <!--
-                    YOUR PHOTO:
-                    Put your photo inside the images folder
-                    and name it ankesh.jpg
-
-                    Example:
-                    images/ankesh.jpg
-                    -->
-
-                    <img src="images/ankesh.jpg"
-                         alt="Ankesh Tiwari">
-
-                </div>
-
+                <a href="#contact" class="btn">
+                    Contact Me
+                </a>
             </div>
 
         </div>
@@ -649,15 +478,14 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
-
+    <!-- ABOUT -->
     <section id="about">
 
         <h2 class="section-title">
-            My Introduction
+            My <span>Introduction</span>
         </h2>
 
-        <div class="about-card">
+        <div class="about-box">
 
             <p>
                 I am a motivated and creative Bachelor of Computer Applications
@@ -684,59 +512,49 @@
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
-
+    <!-- SKILLS -->
     <section id="skills">
 
         <h2 class="section-title">
-            Technical Skills
+            Technical <span>Skills</span>
         </h2>
 
         <div class="skills-grid">
 
             <div class="skill-card">
-                <div class="skill-icon">📊</div>
-                <h3>Data Analyst</h3>
+                <h3>📊 Data Analyst</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">📈</div>
-                <h3>Data Visualization</h3>
+                <h3>📈 Data Visualization</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">🧹</div>
-                <h3>Data Cleaning</h3>
+                <h3>🧹 Data Cleaning</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">💻</div>
-                <h3>MS Office</h3>
+                <h3>💻 MS Office</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">📊</div>
-                <h3>Dashboard Creation</h3>
+                <h3>📊 Dashboard Creation</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>Website Designing</h3>
+                <h3>🌐 Website Designing</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">📑</div>
-                <h3>PowerPoint</h3>
+                <h3>📑 PowerPoint</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">🐍</div>
-                <h3>Python</h3>
+                <h3>🐍 Python</h3>
             </div>
 
             <div class="skill-card">
-                <div class="skill-icon">📗</div>
-                <h3>MS Excel</h3>
+                <h3>📗 MS Excel</h3>
             </div>
 
         </div>
@@ -744,21 +562,18 @@
     </section>
 
 
-    <!-- ================= EDUCATION ================= -->
-
+    <!-- EDUCATION -->
     <section id="education">
 
         <h2 class="section-title">
-            Education
+            My <span>Education</span>
         </h2>
 
         <div class="education-container">
 
             <div class="education-card">
 
-                <h3>
-                    Bachelor of Computer Applications (BCA)
-                </h3>
+                <h3>Bachelor of Computer Applications (BCA)</h3>
 
                 <p>
                     Institute of Information Technology & Management (IITM)
@@ -773,9 +588,7 @@
 
             <div class="education-card">
 
-                <h3>
-                    Diploma in Computer Application
-                </h3>
+                <h3>Diploma in Computer Application (DCA)</h3>
 
                 <p>
                     VCSA
@@ -786,9 +599,7 @@
 
             <div class="education-card">
 
-                <h3>
-                    Diploma in Desktop Publishing
-                </h3>
+                <h3>Diploma in Desktop Publishing</h3>
 
                 <p>
                     VCSA
@@ -801,30 +612,21 @@
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
-
+    <!-- PROJECTS -->
     <section id="projects">
 
         <h2 class="section-title">
-            My Projects
+            My <span>Projects</span>
         </h2>
 
         <div class="projects-grid">
 
 
             <!-- PROJECT 1 -->
-
             <div class="project-card">
 
-                <div class="project-image">
-
-                    <!-- Project photo: images/vrinda-store.png -->
-
-                    <img src="images/vrinda-store.png"
-                         alt="Vrinda Store Annual Report"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;placeholder&quot;>Project Image 01</span>'">
-
-                </div>
+                <img src="vrinda-store.png"
+                     alt="Vrinda Store Annual Report">
 
                 <div class="project-content">
 
@@ -840,9 +642,9 @@
                     </p>
 
                     <a href="https://lnkd.in/p/dwTFbTNj"
-                       class="project-link"
                        target="_blank"
-                       rel="noopener noreferrer">
+                       rel="noopener noreferrer"
+                       class="project-link">
                         View Project →
                     </a>
 
@@ -852,18 +654,10 @@
 
 
             <!-- PROJECT 2 -->
-
             <div class="project-card">
 
-                <div class="project-image">
-
-                    <!-- Project photo: images/shiv-ecommerce.png -->
-
-                    <img src="images/shiv-ecommerce.png"
-                         alt="Shiv Ecommerce Sales Dashboard"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;placeholder&quot;>Project Image 02</span>'">
-
-                </div>
+                <img src="shiv-ecommerce.png"
+                     alt="Shiv Ecommerce Sales Dashboard">
 
                 <div class="project-content">
 
@@ -879,9 +673,9 @@
                     </p>
 
                     <a href="https://lnkd.in/p/dBgKEDUz"
-                       class="project-link"
                        target="_blank"
-                       rel="noopener noreferrer">
+                       rel="noopener noreferrer"
+                       class="project-link">
                         View Project →
                     </a>
 
@@ -891,18 +685,10 @@
 
 
             <!-- PROJECT 3 -->
-
             <div class="project-card">
 
-                <div class="project-image">
-
-                    <!-- Project photo: images/data-visualization.png -->
-
-                    <img src="images/data-visualization.png"
-                         alt="Data Visualization Project"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;placeholder&quot;>Project Image 03</span>'">
-
-                </div>
+                <img src="data-visualization.png"
+                     alt="Data Visualization Project">
 
                 <div class="project-content">
 
@@ -918,9 +704,9 @@
                     </p>
 
                     <a href="https://lnkd.in/p/d2ftmEPU"
-                       class="project-link"
                        target="_blank"
-                       rel="noopener noreferrer">
+                       rel="noopener noreferrer"
+                       class="project-link">
                         View Project →
                     </a>
 
@@ -928,52 +714,48 @@
 
             </div>
 
-
         </div>
 
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
-
+    <!-- CONTACT -->
     <section id="contact">
 
         <h2 class="section-title">
-            Contact Me
+            Contact <span>Me</span>
         </h2>
 
         <div class="contact-container">
 
 
+            <!-- CONTACT INFORMATION -->
             <div class="contact-info">
 
-                <h3>
-                    Let's Connect
-                </h3>
+                <h3>Let's Connect</h3>
 
                 <p>
-                    📧 <strong>Email:</strong><br>
-                    ankeshtiwari149@gmail.com
+                    📧 Email:
+                    <a href="mailto:ankeshtiwari149@gmail.com">
+                        ankeshtiwari149@gmail.com
+                    </a>
                 </p>
 
                 <p>
-                    📱 <strong>Contact:</strong><br>
-                    8595048494
+                    📱 Contact:
+                    <a href="tel:8595048494">
+                        8595048494
+                    </a>
                 </p>
 
                 <p>
-                    📍 <strong>Location:</strong><br>
-                    Delhi, India
-                </p>
-
-                <p>
-                    I am always open to new opportunities, projects,
-                    collaborations, and learning experiences.
+                    📍 Location: Delhi, India
                 </p>
 
             </div>
 
 
+            <!-- CONTACT FORM -->
             <div class="contact-form">
 
                 <form id="contactForm">
@@ -1013,8 +795,7 @@
     </section>
 
 
-    <!-- ================= FOOTER ================= -->
-
+    <!-- FOOTER -->
     <footer>
 
         <p>
@@ -1024,8 +805,7 @@
     </footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
-
+    <!-- JAVASCRIPT -->
     <script>
 
         document
@@ -1051,14 +831,12 @@
                     "\nEmail: " + email +
                     "\n\nMessage:\n" + message;
 
-                const mailto =
+                window.location.href =
                     "mailto:ankeshtiwari149@gmail.com" +
                     "?subject=" +
                     encodeURIComponent(subject) +
                     "&body=" +
                     encodeURIComponent(body);
-
-                window.location.href = mailto;
 
             });
 
@@ -1066,3 +844,4 @@
 
 </body>
 </html>
+```
